@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
-        continue-on-error: true   # 🔥 critical
+        continue-on-error: true  
 
       - name: Upload Playwright Report
         if: always()

@@ -17,10 +17,15 @@ export default defineConfig({
   //   ['json', { outputFile: 'test-results/results.json' }] // Add JSON for debugging
   // ],
   
-  reporter: [
-    ['html', { outputFolder: 'playwright-report', open: 'never' }],
-  ],
 
+  globalTeardown: './global-teardown.js',
+  reporter: [['list']]
+
+  // reporter: [
+  //  ['html'],
+  // ['junit', { outputFile: 'results.xml' }],
+  // ],
+,
   use: {
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
