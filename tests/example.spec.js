@@ -5,8 +5,8 @@ test('Create New Patient – Happy Path', async ({ page }) => {
   await page.goto('https://qa.nulogic-ehr.com/login');
 
   // Login
-  await page.getByRole('textbox', { name: 'Enter Username' }).fill('tukaram.patwari+01@thinkitive.com');
-  await page.getByRole('textbox', { name: 'Enter Password' }).fill('Tuka@123');
+  await page.getByRole('textbox', { name: 'Enter Username' }).fill('tukaram.patwari+02@thinkitive.com');
+  await page.getByRole('textbox', { name: 'Enter Password' }).fill('Tuka@1234');
   await page.getByRole('button', { name: 'Log In' }).click();
 
   // Verify successful login

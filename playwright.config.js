@@ -20,7 +20,7 @@ export default defineConfig({
   reporter: [
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
   ],
-  
+
   use: {
     screenshot: 'on',  // Changed to always capture
     video: 'on',       // Changed to always capture
