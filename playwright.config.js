@@ -18,7 +18,7 @@ export default defineConfig({
   // ],
   
 
-  globalTeardown: './global-teardown.js',
+  globalTeardown: './Utitls/globalTeardown.js',
   reporter: [['list']]
 
   // reporter: [
