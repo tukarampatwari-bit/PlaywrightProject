@@ -8,13 +8,17 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   
   // Enhanced reporter configuration
+  // reporter: [
+  //   ['html', { 
+  //     outputFolder: 'playwright-report', 
+  //     open: 'never' 
+  //   }],
+  //   ['list'],
+  //   ['json', { outputFile: 'test-results/results.json' }] // Add JSON for debugging
+  // ],
+  
   reporter: [
-    ['html', { 
-      open: 'on-failure',  // Changed to open on failure
-      outputFolder: 'playwright-report' 
-    }],
-    ['list'],
-    ['json', { outputFile: 'test-results/results.json' }] // Add JSON for debugging
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
   ],
   
   use: {
