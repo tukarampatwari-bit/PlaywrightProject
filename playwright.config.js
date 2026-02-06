@@ -22,9 +22,9 @@ export default defineConfig({
   ],
 
   use: {
-    screenshot: 'on',  // Changed to always capture
-    video: 'on',       // Changed to always capture
-    trace: 'on',       // Changed to always capture
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    trace: 'on-first-retry',       // Changed to always capture
     actionTimeout: 15000, // Add action timeout
     navigationTimeout: 30000, // Add navigation timeout
   },

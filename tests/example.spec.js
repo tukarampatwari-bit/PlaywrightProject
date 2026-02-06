@@ -19,8 +19,8 @@ test('Create New Patient – Happy Path', async ({ page }) => {
   await expect(page.getByRole('textbox', { name: 'Enter First Name' })).toBeVisible();
 
   // Fill patient basic information
-  await page.getByRole('textbox', { name: 'Enter First Name' }).fill('Sachine');
-  await page.getByRole('textbox', { name: 'Enter Last Name' }).fill('Tendulkar');
+  await page.getByRole('textbox', { name: 'Enter First Name' }).fill('Smrithi');
+  await page.getByRole('textbox', { name: 'Enter Last Name' }).fill('Mandana');
 
   // Select Gender at Birth
   await page.getByRole('button', { name: 'Select Gender at Birth' }).click();
