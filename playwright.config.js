@@ -21,14 +21,9 @@ export default defineConfig({
   
 
   globalTeardown: './Utitls/globalTeardown.js',
-  reporter: [
+   reporter: [
     ['list'],
-    {
-      async onEnd() {
-        const summary = buildSummaryMessage();
-        await sendToGoogleChat(summary);
-      }
-    }
+    ['./Utitls/googleChatReporter.js']
   ]
 
   // reporter: [
