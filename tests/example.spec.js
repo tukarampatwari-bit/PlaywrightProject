@@ -19,8 +19,8 @@ test('Create New Patient – Happy Path', async ({ page }) => {
   await expect(page.getByRole('textbox', { name: 'Enter First Name' })).toBeVisible();
 
   // Fill patient basic information
-  await page.getByRole('textbox', { name: 'Enter First Name' }).fill('Smrithi');
-  await page.getByRole('textbox', { name: 'Enter Last Name' }).fill('Mandana');
+  await page.getByRole('textbox', { name: 'Enter First Name' }).fill('Pawan');
+  await page.getByRole('textbox', { name: 'Enter Last Name' }).fill('Kumar');
 
   // Select Gender at Birth
   await page.getByRole('button', { name: 'Select Gender at Birth' }).click();
@@ -47,7 +47,7 @@ test('Create New Patient – Happy Path', async ({ page }) => {
   await page.getByRole('menuitem', { name: 'MAT', exact: true }).click();
 
   // Enter Email
-  await page.getByRole('textbox', { name: 'Enter Email ID' }).fill('tukaram.patwari+27@thinkitive.com');
+  await page.getByRole('textbox', { name: 'Enter Email ID' }).fill('tukaram.patwari+29@thinkitive.com');
 
   // Select Practice Location
   await page.getByRole('button', { name: 'Select Practice Location' }).click();

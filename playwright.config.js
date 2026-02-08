@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import { sendToGoogleChat } from './Utitls/chatNotifier.js';
+import { buildSummaryMessage } from './Utitls/testSummary.js';
 
 export default defineConfig({
   testDir: './tests',
@@ -19,7 +21,15 @@ export default defineConfig({
   
 
   globalTeardown: './Utitls/globalTeardown.js',
-  reporter: [['list']]
+  reporter: [
+    ['list'],
+    {
+      async onEnd() {
+        const summary = buildSummaryMessage();
+        await sendToGoogleChat(summary);
+      }
+    }
+  ]
 
   // reporter: [
   //  ['html'],
