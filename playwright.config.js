@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import { sendToGoogleChat } from './Utitls/chatNotifier.js';
-import { buildSummaryMessage } from './Utitls/testSummary.js';
+import {buildsummary} from './Utitls/testSummary.js';
 
 export default defineConfig({
   testDir: './tests',
@@ -19,11 +19,9 @@ export default defineConfig({
   //   ['json', { outputFile: 'test-results/results.json' }] // Add JSON for debugging
   // ],
   
-
-  globalTeardown: './Utitls/globalTeardown.js',
    reporter: [
     ['list'],
-    ['./Utitls/googleChatReporter.js']
+    ['./Utitls/chatNotifier.js']
   ]
 
   // reporter: [
