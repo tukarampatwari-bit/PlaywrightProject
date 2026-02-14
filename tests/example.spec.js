@@ -6,7 +6,7 @@ test('Create New Patient – Happy Path', async ({ page }) => {
 
   // Login
   await page.getByRole('textbox', { name: 'Enter Username' }).fill('tukaram.patwari+01@thinkitive.com');
-  await page.getByRole('textbox', { name: 'Enter Password' }).fill('Tuka@123');
+  await page.getByRole('textbox', { name: 'Enter Password' }).fill('Tuka@9849');
   await page.getByRole('button', { name: 'Log In' }).click();
 
   // Verify successful login
@@ -58,7 +58,7 @@ test('Create New Patient – Happy Path', async ({ page }) => {
   await page.getByRole('menuitem', { name: 'Individual' }).click();
 
   // Save patient
-  await page.getByRole('button', { name: 'Save &' }).click();
+  await page.getByRole('button', { name: 'Save & Next' }).click();
 
   // Navigate to Patients page
  // await page.getByRole('button', { name: 'Patients' }).click();

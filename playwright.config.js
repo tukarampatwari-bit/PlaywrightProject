@@ -1,40 +1,28 @@
 import { defineConfig, devices } from '@playwright/test';
-import { sendToGoogleChat } from './Utitls/chatNotifier.js';
-import {buildsummary} from './Utitls/testSummary.js';
 
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 1, // Add 1 retry locally
+  retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
-  
-  // Enhanced reporter configuration
-  // reporter: [
-  //   ['html', { 
-  //     outputFolder: 'playwright-report', 
-  //     open: 'never' 
-  //   }],
-  //   ['list'],
-  //   ['json', { outputFile: 'test-results/results.json' }] // Add JSON for debugging
-  // ],
-  
-   reporter: [
-    ['list'],
-    ['./Utitls/chatNotifier.js']
-  ]
 
-  // reporter: [
-  //  ['html'],
-  // ['junit', { outputFile: 'results.xml' }],
-  // ],
-,
+  // ✅ Enable HTML + List Reporter
+  reporter: [
+    ['list'],
+    ['html', { 
+      outputFolder: 'playwright-report',
+      open: 'on-failure'   // change to 'always' if needed
+    }],
+    ['json', { outputFile: 'test-results/results.json' }]
+  ],
+
   use: {
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    trace: 'on-first-retry',       // Changed to always capture
-    actionTimeout: 15000, // Add action timeout
-    navigationTimeout: 30000, // Add navigation timeout
+    trace: 'on-first-retry',
+    actionTimeout: 15000,
+    navigationTimeout: 30000,
   },
 
   projects: [
