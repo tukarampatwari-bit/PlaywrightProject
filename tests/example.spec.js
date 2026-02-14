@@ -58,7 +58,7 @@ test('Create New Patient – Happy Path', async ({ page }) => {
   await page.getByRole('menuitem', { name: 'Individual' }).click();
 
   // Save patient
-  await page.getByRole('button', { name: 'Save & Next' }).click();
+  await page.getByRole('button', { name: 'Save &' }).click();
 
   // Navigate to Patients page
  // await page.getByRole('button', { name: 'Patients' }).click();
